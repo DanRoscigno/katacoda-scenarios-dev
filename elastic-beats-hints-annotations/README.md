@@ -19,13 +19,13 @@ kubectl create clusterrolebinding cluster-admin-binding \
 ```
 
 ### Set the credentials
-Set these with the values from the http://cloud.elastic.co deployment
+Set these with the values from the http://cloud.elastic.co deployment:
 
 ```
 vi ELASTIC_PASSWORD
 vi ELASTIC_CLOUD_ID
 ```
-and create a secret in the Kubernetes system level namespace
+and create a secret in the Kubernetes system level namespace:
 
 ```
 kubectl create secret generic dynamic-logging \
@@ -46,7 +46,7 @@ kubectl get pods --namespace=kube-system | grep kube-state
 ```
 
 ### Deploy the Guestbook example
-Note: This is mostly the default Guestbook example in the [Kubernetes.io docs](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml)
+Note: This is mostly the default Guestbook example in the [Kubernetes.io docs](https://kubernetes.io/docs/tutorials/stateless-application/guestbook/), and here is the [GitHub repo](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml).
 
 I added an ingress that preserves source IPs and added ConfigMaps for the Apache2 and Mod-Status configs so that I could block the /server-status endpoint from outside the internal network (actually apache2.conf is unedited, but I may need it later).  I also added a redis.conf to set the slowlog time criteria.
 
@@ -63,6 +63,7 @@ Once the external IP address is assigned you can type CTRL-C to stop watching fo
 ### Deploy the Elastic Beats
 ```
 kubectl create -f filebeat-kubernetes.yaml 
+kubectl create -f metricbeat-setup.yaml
 kubectl create -f metricbeat-kubernetes.yaml 
 kubectl create -f packetbeat-kubernetes.yaml 
 ```
