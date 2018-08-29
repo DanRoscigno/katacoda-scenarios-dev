@@ -6,7 +6,9 @@ If this is your first experience with the Elastic stack I would recommend Elasti
 Make sure that you take note of the CLOUD ID and Elastic Password if you use Elastic Cloud or Elastic Cloud Enterprise.
 
 ### Connect to your Kubernetes environment
-In Google I use the web based console provided by Google.  In IBM Cloud I use an Ubuntu VM running in Virtualbox and connect to IBM Cloud Container service.  Both provide detailed instructions on getting things set up.  You may want to remember the command `kubectl config use-context`.  This will take a name of a context as an arg, to find all of your contexts: `cat ~/.kube/config | grep "^- name:"`
+In Google I use the web based console provided by Google.  In IBM Cloud I use an Ubuntu VM running in Virtualbox and connect to IBM Cloud Container service.  Both provide detailed instructions on getting things set up.  You may want to remember the command `kubectl config use-context`.  This will take a name of a context as an arg, to find all of your contexts:
+
+`cat ~/.kube/config | grep "^- name:"`
 
 ### Authorization
 Create a cluster level role binding so that you can install kube-state-metrics and the Beats in the system level namespace
@@ -44,7 +46,7 @@ kubectl get pods --namespace=kube-system | grep kube-state
 ```
 
 ### Deploy the Guestbook example
-Note: This is mostly the default Guestbook example from https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml
+Note: This is mostly the default Guestbook example in the [Kubernetes.io docs](https://github.com/kubernetes/examples/blob/master/guestbook/all-in-one/guestbook-all-in-one.yaml)
 
 I added an ingress that preserves source IPs and added ConfigMaps for the Apache2 and Mod-Status configs so that I could block the /server-status endpoint from outside the internal network (actually apache2.conf is unedited, but I may need it later).  I also added a redis.conf to set the slowlog time criteria.
 
