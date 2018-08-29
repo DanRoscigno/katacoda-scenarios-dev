@@ -1,15 +1,15 @@
 ### Create an Elastic Cloud deployment
-You can use Elastic Cloud ( http://cloud.elastic.co ), or a local deployment, or deploy containers from https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+You can use Elasticsearch Service in Elastic Cloud ( http://cloud.elastic.co ), or a local deployment, or deploy containers from https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 
 If this is your first experience with the Elastic stack I would recommend Elastic Cloud; and don't worry, you do not need a credit card.
 
 Make sure that you take note of the CLOUD ID and Elastic Password if you use Elastic Cloud or Elastic Cloud Enterprise.
 
 ### Connect to your Kubernetes environment
-In Google I use the web based console provided by Google.  In IBM Cloud I use an Ubuntu VM running in Virtualbox and connect to IBM Cloud Container service.
+In Google I use the web based console provided by Google.  In IBM Cloud I use an Ubuntu VM running in Virtualbox and connect to IBM Cloud Container service.  Both provide detailed instructions on getting things set up.  You may want to remember the command `kubectl config use-context`.  This will take a name of a context as an arg, to find all of your contexts: `cat ~/.kube/config | grep "^- name:"`
 
 ### Authorization
-Create a cluster level role binding so that you can manipulate the system level namespace
+Create a cluster level role binding so that you can install kube-state-metrics and the Beats in the system level namespace
 
 ```
 kubectl create clusterrolebinding cluster-admin-binding \
