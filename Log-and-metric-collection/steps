@@ -1,0 +1,5 @@
+git clone https://github.com/kubernetes/heapster.git /root/course/heapster
+kubectl create -f /root/course/heapster/deploy/kube-config/influxdb/
+kubectl create -f /root/course/heapster/deploy/kube-config/rbac/heapster-rbac.yaml
+kubectl get pods -n kube-system|grep heapster
+

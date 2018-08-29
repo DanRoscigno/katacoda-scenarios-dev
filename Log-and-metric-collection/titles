@@ -1,0 +1,9 @@
+mv verify-that-kubernetes-is-ready.md step1-verify-that-kubernetes-is-ready.md 
+mv deploy-the-sample-application.md step2-deploy-the-sample-application.md 
+mv deploy-elasticsearch.md step3-deploy-elasticsearch.md 
+mv deploy-kibana.md step4-deploy-kibana.md 
+mv deploy-filebeat.md step5-deploy-filebeat.md 
+mv deploy-kube-state-metrics.md step6-deploy-kube-state-metrics.md 
+mv deploy-metricbeat.md step7-deploy-metricbeat.md 
+mv explore-your-logs-metrics-in-kibana.md step8-explore-your-logs-metrics-in-kibana.md 
+mv examine-events-from-kube-state-metrics.md step9-examine-events-from-kube-state-metrics.md 

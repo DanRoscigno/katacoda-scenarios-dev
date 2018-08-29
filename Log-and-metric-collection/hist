@@ -1,0 +1,32 @@
+    1  kubectl get nodes
+    2  kubectl apply -f /root/course/guestbook.yaml
+    3  kubectl apply -f /root/course/es.yaml
+    4  kubectl apply -f /root/course/kibana.yaml
+    5  kubectl apply -f /root/course/filebeat-kubernetes.yaml
+    6  git clone https://github.com/kubernetes/kube-state-metrics.git /root/course/kube-state-metrics
+    7  kubectl apply -f /root/course/kube-state-metrics/kubernetes
+    8  kubectl apply -f /root/course/metricbeat-setup.yaml
+    9  kubectl get pods -n kube-system | grep metricbeat
+   10  kubectl get pods -n kube-system | grep metricbeat -w
+   11  kubectl get pods -n kube-system -w | grep metricbeat
+   12  kubectl get pods
+   13  kubectl get pods -n kube-system
+   14  kubectl apply -f /root/course/metricbeat-setup.yaml
+   15  kubectl get pods -n kube-system | grep metricbeat
+   16  kubectl apply -f /root/course/metricbeat-kubernetes.yaml
+   17  kubectl get pods -n kube-system | grep metricbeat
+   18  kubectl scale --replicas=2 deployment/frontend
+   19  kubectl get deployments
+   20  kubectl scale --replicas=3 deployment/frontend
+   21  kubectl top nodes
+   22  git clone https://github.com/kubernetes/heapster.git /root/course/heapster
+   23  kubectl create -f /root/course/heapster/deploy/kube-config/influxdb/
+   24  kubectl create -f /root/course/heapster/deploy/kube-config/rbac/heapster-rbac.yaml
+   25  kubectl get pods -n kube-system|grep heapster
+   26  kubectl get pods -n kube-system -w|grep heapster
+   27  kubectl top nodes
+   28  kubectl top nodes -w
+   29  kubectl top nodes
+   30  kubectl top pods
+   31  kubectl top nodes
+   32  history
